@@ -1,0 +1,47 @@
+getgenv().IrisAd = true
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/KylnDantas/IrisV3/main/src"))()
+
+Notification.Notify("Credits", "Kaii<3#8782, ID: 873025434894360627", "", { -- // credits, please do not remove
+   Duration = 7,      
+   Main = {
+       Rounding = true,
+   }
+});
+task.wait(7)
+Notification.Notify("Quest Info", "Quests takes 10 seconds to finish", "", {
+   Duration = 3,      
+   Main = {
+       Rounding = true,
+   }
+});
+task.wait(3)
+
+-- // variables
+local plr = game:GetService('Players').LocalPlayer;
+local hrp = game:GetService('Players').LocalPlayer.Character.HumanoidRootPart;
+
+getgenv().moneyFarm = true; -- // change to "false" to stop and "true" to start
+while getgenv().moneyFarm and game:GetService("Players").LocalPlayer.PlayerGui.RevGui.Interface.Others.QuestUI.Visible == false do task.wait()
+hrp.CFrame = CFrame.new(-166.788177, 100.422806, 1810.12256, -0.138085857, 7.99901372e-08, -0.990420282, -2.32971846e-08, 1, 8.40119583e-08, 0.990420282, 3.46748656e-08, -0.138085857)
+game:GetService("ReplicatedStorage").Communication.Events.QuestEvent:FireServer("Request Quest","CatFood6")
+task.wait(.1)
+local part = Instance.new("Part")
+part.Anchored = true
+part.Position = Vector3.new(math.random(999999), math.random(999999), math.random(999999))
+part.Size = Vector3.new(20000,200,20000)
+part.Parent = game.Workspace
+part.Name = "."
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(game.Workspace["."].Position + Vector3.new(0,20,0))
+while getgenv().moneyFarm and game:GetService("Players").LocalPlayer.PlayerGui.RevGui.Interface.Others.QuestUI.Visible == true do
+task.wait(10) -- // cooldown to not get kicked by anticheat, 10 is the minimum
+hrp.CFrame = CFrame.new(253.39357, 97.5809937, 1889.76538, 0.994437695, 1.32182114e-08, -0.10532663, -1.53817687e-08, 1, -1.97291001e-08, 0.10532663, 2.12394706e-08, 0.994437695)
+task.wait(1)
+local part = Instance.new("Part")
+part.Anchored = true
+part.Position = Vector3.new(math.random(999999), math.random(999999), math.random(999999))
+part.Size = Vector3.new(20000,200,20000)
+part.Parent = game.Workspace
+part.Name = "."
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(game.Workspace["."].Position + Vector3.new(0,20,0))
+end
+end
